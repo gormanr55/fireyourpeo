@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You | FireYourPEO</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#fafaf8;--ink:#111111;--mid:#444;--muted:#888;--border:#e4e2dc;
+  --accent:#1a3d2e;--accent-light:#225038;--accent-pale:#edf5f0;
+  --highlight:#f0f7f3;--white:#ffffff;--fire:#d94f1e;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+
+/* NAV */
+nav{display:flex;justify-content:space-between;align-items:center;padding:0 2.5rem;height:62px;border-bottom:1px solid var(--border);background:var(--white)}
+.nav-logo{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:900;color:var(--ink);text-decoration:none}
+.nav-logo span{color:var(--fire)}
+
+/* HERO */
+.main{flex:1;display:flex;align-items:center;justify-content:center;padding:4rem 2rem}
+.card{max-width:680px;width:100%;text-align:center}
+
+.check-circle{
+  width:72px;height:72px;
+  background:var(--highlight);
+  border:2px solid #b8dfc8;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 2rem;
+  font-size:2rem;
+  animation:popIn 0.5s cubic-bezier(0.22,1,0.36,1);
+}
+
+@keyframes popIn{
+  from{opacity:0;transform:scale(0.6)}
+  to{opacity:1;transform:scale(1)}
+}
+
+.eyebrow{
+  display:inline-block;
+  font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--accent);background:var(--accent-pale);
+  padding:0.3rem 0.8rem;border-radius:2px;margin-bottom:1.25rem;
+}
+
+h1{
+  font-family:'Fraunces',serif;
+  font-size:clamp(2rem,4vw,2.9rem);
+  font-weight:900;line-height:1.1;letter-spacing:-0.02em;
+  margin-bottom:1rem;
+}
+
+h1 em{font-style:italic;color:var(--fire)}
+
+.sub{
+  font-size:1rem;color:var(--mid);
+  max-width:500px;margin:0 auto 2.5rem;
+  line-height:1.8;
+}
+
+/* DIVIDER */
+.divider{
+  display:flex;align-items:center;gap:1rem;
+  margin:2rem 0;color:var(--muted);font-size:0.82rem;
+}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* BOOK SECTION */
+.book-box{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:2.25rem;
+  margin-bottom:2rem;
+  border-top:3px solid var(--fire);
+  animation:slideUp 0.6s cubic-bezier(0.22,1,0.36,1) 0.2s both;
+}
+
+@keyframes slideUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.book-title{
+  font-family:'Fraunces',serif;
+  font-size:1.35rem;font-weight:700;
+  margin-bottom:0.5rem;color:var(--ink);
+}
+
+.book-sub{
+  font-size:0.88rem;color:var(--mid);
+  line-height:1.7;margin-bottom:1.5rem;
+}
+
+.book-btn{
+  display:inline-block;
+  padding:1rem 2.25rem;
+  background:var(--fire);
+  color:#fff;
+  border-radius:4px;
+  font-family:'Inter',sans-serif;
+  font-size:0.92rem;font-weight:600;
+  text-decoration:none;
+  transition:background 0.15s,transform 0.1s;
+  letter-spacing:0.01em;
+}
+.book-btn:hover{background:#c0421a;transform:translateY(-1px)}
+
+.book-note{
+  font-size:0.75rem;color:var(--muted);
+  margin-top:1rem;line-height:1.5;
+}
+
+/* WHAT TO GATHER */
+.gather-box{
+  background:var(--highlight);
+  border:1px solid #c3dfd0;
+  border-radius:8px;
+  padding:2rem;
+  text-align:left;
+  margin-bottom:2rem;
+  animation:slideUp 0.6s cubic-bezier(0.22,1,0.36,1) 0.35s both;
+}
+
+.gather-title{
+  font-size:0.82rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.1em;
+  color:var(--accent);margin-bottom:1rem;
+}
+
+.gather-list{list-style:none}
+.gather-list li{
+  display:flex;align-items:flex-start;gap:0.75rem;
+  font-size:0.88rem;color:var(--mid);
+  margin-bottom:0.65rem;line-height:1.6;
+}
+.gather-list li::before{
+  content:'→';color:var(--fire);
+  font-weight:700;flex-shrink:0;margin-top:0.05rem;
+}
+
+/* FOOTER */
+footer{
+  padding:1.5rem 2.5rem;
+  border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:0.78rem;color:var(--muted);
+  background:var(--white);
+}
+
+.footer-logo{
+  font-family:'Fraunces',serif;
+  font-size:1rem;font-weight:900;
+  color:var(--ink);text-decoration:none;
+}
+.footer-logo span{color:var(--fire)}
+
+@media(max-width:600px){
+  nav{padding:0 1rem}
+  .main{padding:2.5rem 1.25rem}
+  footer{flex-direction:column;gap:0.5rem;text-align:center;padding:1.25rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Fire<span>YourPEO</span></a>
+</nav>
+
+<main class="main">
+  <div class="card">
+
+    <div class="check-circle">✅</div>
+    <div class="eyebrow">Request Received</div>
+    <h1>We got it.<br><em>You're in good hands.</em></h1>
+    <p class="sub">We'll review your information and reach out within one business day to kick off your free PEO exit analysis. In the meantime — skip the wait and book a time directly on our calendar.</p>
+
+    <!-- BOOK NOW -->
+    <div class="book-box">
+      <div class="book-title">Book Your 15-Minute Strategy Call</div>
+      <p class="book-sub">Pick a time that works for you. We'll walk through your current PEO situation, give you a preliminary read on your savings potential, and outline exactly what the analysis process looks like.</p>
+      <a href="https://outlook.office.com/bookwithme/user/e4e7b38d11fe4bb981c9008028be2e24@bbrown.com?anonymous&ep=plink" target="_blank" class="book-btn">📅 Choose a Time on My Calendar →</a>
+      <div class="book-note">15 minutes. No pressure. Just clarity on what your PEO is actually costing you.</div>
+    </div>
+
+    <div class="divider">While you wait, here's what to gather</div>
+
+    <!-- WHAT TO GATHER -->
+    <div class="gather-box">
+      <div class="gather-title">To speed up your analysis, have these ready</div>
+      <ul class="gather-list">
+        <li>Your most recent PEO invoice (last 2–3 months ideal)</li>
+        <li>Employee census — headcount, job titles, zip codes, dependent counts</li>
+        <li>Current benefits summary — plan names, carrier, employee contributions</li>
+        <li>Workers' comp experience mod rate if you know it</li>
+        <li>Your PEO contract — specifically the termination and renewal clauses</li>
+        <li>Any open enrollment materials from your PEO from the last renewal</li>
+      </ul>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <a href="/" class="footer-logo">Fire<span>YourPEO</span></a>
+  <div>© 2025 FireYourPEO.com. Independent advisory.</div>
+  <div>hello@fireyourpeo.com</div>
+</footer>
+
+</body>
+</html>
