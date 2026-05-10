@@ -613,8 +613,7 @@ function submitForm(){
     peo:document.getElementById('f-peo').value,
     notes:document.getElementById('f-notes').value.trim()
   });
-  document.getElementById('formFields').style.display='none';
-  document.getElementById('formSuccess').style.display='block';
+  window.location.href = '/thank-you.html';
 }
 
 // ── FAQ ──
