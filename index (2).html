@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fire Your PEO | Free Cost Analysis & Exit Plan</title>
+<meta name="description" content="Find out exactly what your PEO is costing you. Free line-by-line invoice analysis. No obligation. Nationwide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#fafaf8;--ink:#111111;--mid:#444;--muted:#888;--border:#e4e2dc;
+  --accent:#1a3d2e;--accent-light:#225038;--accent-pale:#edf5f0;
+  --highlight:#f0f7f3;--white:#ffffff;--red:#c0392b;--fire:#d94f1e;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* ── NAV ── */
+nav{display:flex;justify-content:space-between;align-items:center;padding:0 2.5rem;height:62px;border-bottom:1px solid var(--border);background:var(--white);position:sticky;top:0;z-index:200}
+.nav-logo{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:900;color:var(--ink);text-decoration:none;letter-spacing:-0.01em}
+.nav-logo span{color:var(--fire)}
+.nav-links{display:flex;align-items:center;gap:1.75rem}
+.nav-links a{font-size:0.82rem;color:var(--mid);text-decoration:none;font-weight:500;transition:color 0.15s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{display:inline-block;padding:0.5rem 1.15rem;background:var(--fire);color:#fff!important;border-radius:4px;font-size:0.8rem!important;font-weight:600!important;transition:background 0.15s!important;letter-spacing:0.01em}
+.nav-cta:hover{background:#c0421a!important}
+
+/* ── HERO ── */
+.hero{max-width:1120px;margin:0 auto;padding:5rem 2rem 4rem;display:grid;grid-template-columns:1fr 430px;gap:5rem;align-items:start}
+.hero-eyebrow{display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--fire);background:#fdf0eb;padding:0.3rem 0.8rem;border-radius:2px;margin-bottom:1.25rem}
+h1{font-family:'Fraunces',serif;font-size:clamp(2.5rem,4vw,3.5rem);font-weight:900;line-height:1.06;letter-spacing:-0.025em;margin-bottom:1.25rem}
+h1 em{font-style:italic;color:var(--fire)}
+.hero-sub{font-size:1.05rem;color:var(--mid);max-width:520px;margin-bottom:2rem;line-height:1.8}
+.hero-actions{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn-primary{display:inline-block;padding:0.875rem 1.75rem;background:var(--fire);color:#fff;border-radius:4px;font-size:0.9rem;font-weight:600;text-decoration:none;transition:background 0.15s,transform 0.1s;border:none;cursor:pointer}
+.btn-primary:hover{background:#c0421a;transform:translateY(-1px)}
+.btn-secondary{display:inline-block;padding:0.875rem 1.5rem;background:transparent;color:var(--ink);border-radius:4px;font-size:0.9rem;font-weight:500;text-decoration:none;border:1.5px solid var(--border);transition:border-color 0.15s}
+.btn-secondary:hover{border-color:var(--ink)}
+.hero-metrics{display:flex;gap:2.5rem;padding-top:2rem;border-top:1px solid var(--border)}
+.metric-val{font-family:'Fraunces',serif;font-size:1.75rem;font-weight:700;color:var(--ink);line-height:1;margin-bottom:0.2rem}
+.metric-label{font-size:0.75rem;color:var(--muted);line-height:1.4}
+
+/* ── CALC CARD ── */
+.calc-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:2.1rem;box-shadow:0 4px 28px rgba(0,0,0,0.08);position:sticky;top:80px}
+.calc-card::before{content:'';display:block;height:3px;background:var(--fire);border-radius:8px 8px 0 0;margin:-2.1rem -2.1rem 1.75rem;border-radius:7px 7px 0 0}
+.calc-label{font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.6rem}
+.calc-title{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;margin-bottom:0.3rem;color:var(--ink)}
+.calc-sub{font-size:0.82rem;color:var(--muted);margin-bottom:1.5rem}
+
+.field{margin-bottom:1rem}
+.field label{display:block;font-size:0.74rem;font-weight:600;color:var(--mid);margin-bottom:0.35rem;letter-spacing:0.02em}
+.field input,.field select{width:100%;padding:0.72rem 0.9rem;border:1.5px solid var(--border);border-radius:4px;font-family:'Inter',sans-serif;font-size:0.9rem;color:var(--ink);background:var(--white);transition:border-color 0.15s,box-shadow 0.15s;appearance:none;-webkit-appearance:none}
+.field input:focus,.field select:focus{outline:none;border-color:var(--fire);box-shadow:0 0 0 3px rgba(217,79,30,0.09)}
+.field input.err,.field select.err{border-color:var(--red);box-shadow:0 0 0 3px rgba(192,57,43,0.08)}
+.select-wrap{position:relative}
+.select-wrap::after{content:'↓';position:absolute;right:0.9rem;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none;font-size:0.8rem}
+
+/* peo autocomplete */
+.peo-input-wrap{position:relative}
+.peo-suggestions{position:absolute;top:100%;left:0;right:0;background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 4px 4px;z-index:50;max-height:180px;overflow-y:auto;display:none}
+.peo-suggestions.open{display:block}
+.peo-suggestion{padding:0.6rem 0.9rem;font-size:0.88rem;cursor:pointer;color:var(--ink);transition:background 0.1s}
+.peo-suggestion:hover{background:var(--highlight)}
+
+.calc-btn{width:100%;padding:0.875rem;background:var(--fire);color:#fff;border:none;border-radius:4px;font-family:'Inter',sans-serif;font-size:0.88rem;font-weight:600;cursor:pointer;margin-top:0.25rem;transition:background 0.15s,transform 0.1s;letter-spacing:0.01em}
+.calc-btn:hover{background:#c0421a;transform:translateY(-1px)}
+
+.result-box{display:none;margin-top:1.25rem;padding:1.25rem;background:var(--highlight);border:1px solid #b8dfc8;border-radius:6px}
+.result-box.show{display:block;animation:fadeUp 0.4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.result-lbl{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);margin-bottom:0.3rem}
+.result-num{font-family:'Fraunces',serif;font-size:2rem;font-weight:900;color:var(--ink);line-height:1;margin-bottom:0.4rem}
+.result-note{font-size:0.78rem;color:var(--mid);line-height:1.6;margin-bottom:1rem}
+.result-cta{display:block;width:100%;padding:0.8rem;background:var(--fire);color:#fff;border:none;border-radius:4px;font-family:'Inter',sans-serif;font-size:0.83rem;font-weight:600;cursor:pointer;text-align:center;text-decoration:none;transition:background 0.15s}
+.result-cta:hover{background:#c0421a}
+.calc-disclaimer{font-size:0.68rem;color:var(--muted);text-align:center;margin-top:0.85rem;line-height:1.5}
+
+/* ── PEO BAR ── */
+.peo-bar{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.5rem 2rem;text-align:center}
+.peo-bar-label{font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+.peo-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem}
+.peo-tag{display:inline-block;padding:0.35rem 0.9rem;background:var(--bg);border:1px solid var(--border);border-radius:999px;font-size:0.78rem;font-weight:500;color:var(--mid)}
+
+/* ── SECTIONS ── */
+.section{max-width:1120px;margin:0 auto;padding:5.5rem 2rem}
+.section-tag{display:inline-block;font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--fire);margin-bottom:0.75rem}
+h2{font-family:'Fraunces',serif;font-size:clamp(2rem,3vw,2.7rem);font-weight:900;line-height:1.1;letter-spacing:-0.02em;margin-bottom:1rem}
+h2 em{font-style:italic;color:var(--fire)}
+.section-intro{font-size:1rem;color:var(--mid);max-width:600px;line-height:1.8;margin-bottom:3rem}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.why-card{padding:1.75rem;border:1px solid var(--border);border-radius:6px;background:var(--white);transition:border-color 0.2s,box-shadow 0.2s}
+.why-card:hover{border-color:#c8e0d4;box-shadow:0 4px 16px rgba(0,0,0,0.05)}
+.why-icon{font-size:1.5rem;margin-bottom:0.75rem}
+.why-card h3{font-size:1rem;font-weight:600;margin-bottom:0.5rem}
+.why-card p{font-size:0.85rem;color:var(--mid);line-height:1.75}
+
+/* PROCESS */
+.process-section{background:var(--ink)}
+.process-inner{max-width:1120px;margin:0 auto;padding:5.5rem 2rem}
+.process-inner .section-tag{color:#f4926a}
+.process-inner h2{color:#fff}
+.process-inner .section-intro{color:rgba(255,255,255,0.55)}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.75rem;margin-top:3rem}
+.step-block{padding:1.75rem 1.5rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:6px}
+.step-num{font-family:'Fraunces',serif;font-size:2.75rem;font-weight:900;color:rgba(244,146,106,0.2);line-height:1;margin-bottom:1rem}
+.step-block h3{font-size:0.95rem;font-weight:600;color:#fff;margin-bottom:0.5rem}
+.step-block p{font-size:0.82rem;color:rgba(255,255,255,0.5);line-height:1.75}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.service-card{padding:2rem;border:1px solid var(--border);border-radius:6px;background:var(--white);transition:border-color 0.2s}
+.service-card:hover{border-color:#c8e0d4}
+.service-card h3{font-size:1rem;font-weight:600;margin-bottom:0.5rem;display:flex;align-items:center;gap:0.5rem}
+.service-card p{font-size:0.85rem;color:var(--mid);line-height:1.75;margin-bottom:0.75rem}
+.stags{display:flex;flex-wrap:wrap;gap:0.4rem}
+.stag{font-size:0.7rem;padding:0.2rem 0.65rem;background:var(--highlight);color:var(--accent);border-radius:999px;font-weight:500}
+
+/* RESULTS */
+.results-section{background:var(--highlight);border-top:1px solid #c3dfd0;border-bottom:1px solid #c3dfd0}
+.results-inner{max-width:1120px;margin:0 auto;padding:5.5rem 2rem}
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.result-card{background:var(--white);border:1px solid #c3dfd0;border-radius:6px;padding:2rem}
+.rc-savings{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:900;color:var(--accent);line-height:1;margin-bottom:0.35rem}
+.rc-label{font-size:0.78rem;color:var(--mid);margin-bottom:1.25rem;line-height:1.55}
+.rc-co{font-size:0.82rem;font-weight:600;color:var(--ink)}
+.rc-detail{font-size:0.75rem;color:var(--muted)}
+
+/* TESTIMONIALS */
+.tgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem}
+.tcard{padding:2rem;border:1px solid var(--border);border-radius:6px;background:var(--white)}
+.qmark{font-family:'Fraunces',serif;font-size:3rem;line-height:0.6;color:var(--fire);opacity:0.25;margin-bottom:0.75rem}
+.ttext{font-size:0.92rem;color:var(--mid);line-height:1.85;margin-bottom:1.5rem;font-style:italic}
+.tsavings{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;color:var(--accent);margin-bottom:0.2rem}
+.tauthor{font-size:0.75rem;color:var(--muted);font-weight:500}
+
+/* FAQ */
+.faq-list{margin-top:2.5rem;border-top:1px solid var(--border)}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{width:100%;background:none;border:none;padding:1.3rem 0;display:flex;justify-content:space-between;align-items:center;font-family:'Inter',sans-serif;font-size:0.95rem;font-weight:600;color:var(--ink);cursor:pointer;text-align:left;gap:1rem}
+.chevron{flex-shrink:0;width:22px;height:22px;border:1.5px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:var(--muted);transition:transform 0.2s,background 0.2s,border-color 0.2s;font-style:normal}
+.faq-item.open .chevron{transform:rotate(45deg);background:var(--fire);border-color:var(--fire);color:#fff}
+.faq-a{display:none;padding-bottom:1.3rem;font-size:0.88rem;color:var(--mid);line-height:1.85;max-width:720px}
+.faq-item.open .faq-a{display:block}
+
+/* CONTACT */
+.contact-section{background:var(--ink)}
+.contact-inner{max-width:1120px;margin:0 auto;padding:5.5rem 2rem;display:grid;grid-template-columns:1fr 500px;gap:5rem;align-items:start}
+.contact-inner .section-tag{color:#f4926a}
+.contact-inner h2{color:#fff}
+.contact-sub{font-size:0.95rem;color:rgba(255,255,255,0.55);line-height:1.8;margin-top:0.75rem;max-width:440px}
+.cbullets{list-style:none;margin-top:1.75rem}
+.cbullets li{display:flex;align-items:flex-start;gap:0.75rem;font-size:0.88rem;color:rgba(255,255,255,0.6);margin-bottom:0.8rem;line-height:1.65}
+.cbullets li::before{content:'✓';color:#7acaa0;font-weight:700;flex-shrink:0;margin-top:0.1rem}
+
+.form-card{background:var(--white);border-radius:8px;padding:2.1rem}
+.form-card-title{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:0.25rem}
+.form-card-sub{font-size:0.8rem;color:var(--muted);margin-bottom:1.5rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-card .field label{color:var(--mid)}
+.form-card input,.form-card select,.form-card textarea{width:100%;padding:0.72rem 0.9rem;border:1.5px solid var(--border);border-radius:4px;font-family:'Inter',sans-serif;font-size:0.88rem;color:var(--ink);background:var(--white);transition:border-color 0.15s,box-shadow 0.15s;appearance:none;-webkit-appearance:none}
+.form-card textarea{min-height:80px;resize:vertical}
+.form-card input:focus,.form-card select:focus,.form-card textarea:focus{outline:none;border-color:var(--fire);box-shadow:0 0 0 3px rgba(217,79,30,0.09)}
+.form-submit{width:100%;padding:0.9rem;background:var(--fire);color:#fff;border:none;border-radius:4px;font-family:'Inter',sans-serif;font-size:0.9rem;font-weight:600;cursor:pointer;margin-top:0.5rem;transition:background 0.15s}
+.form-submit:hover{background:#c0421a}
+.form-or{text-align:center;font-size:0.78rem;color:var(--muted);margin:0.8rem 0}
+.form-cal{display:block;text-align:center;font-size:0.83rem;color:var(--fire);text-decoration:none;font-weight:500}
+.form-cal:hover{text-decoration:underline}
+.form-disclaimer{font-size:0.68rem;color:var(--muted);text-align:center;margin-top:0.75rem;line-height:1.5}
+.form-success{display:none;text-align:center;padding:2.5rem 1rem}
+.form-success .check{font-size:2.5rem;margin-bottom:1rem}
+.form-success h3{font-family:'Fraunces',serif;font-size:1.35rem;color:var(--accent);margin-bottom:0.5rem}
+.form-success p{font-size:0.85rem;color:var(--muted);line-height:1.75}
+
+/* FOOTER */
+footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.07)}
+.footer-inner{max-width:1120px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:900;color:var(--white);margin-bottom:0.75rem}
+.footer-brand span{color:var(--fire)}
+.footer-tagline{font-size:0.8rem;color:rgba(255,255,255,0.35);line-height:1.65}
+footer h4{font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:1rem}
+footer a{display:block;font-size:0.82rem;color:rgba(255,255,255,0.4);text-decoration:none;margin-bottom:0.5rem;transition:color 0.15s}
+footer a:hover{color:rgba(255,255,255,0.9)}
+.footer-bottom{max-width:1120px;margin:0 auto;padding:1rem 2rem 2rem;font-size:0.74rem;color:rgba(255,255,255,0.2)}
+
+/* ANIM */
+.fade-up{opacity:0;transform:translateY(18px);transition:opacity 0.55s ease,transform 0.55s ease}
+.fade-up.in{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:980px){
+  .hero,.contact-inner{grid-template-columns:1fr;gap:2.5rem}
+  .calc-card{position:static}
+  .why-grid,.steps-grid{grid-template-columns:repeat(2,1fr)}
+  .services-grid,.tgrid,.results-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .form-row{grid-template-columns:1fr}
+  nav{padding:0 1rem}
+  .nav-links a:not(.nav-cta){display:none}
+  .section,.results-inner,.process-inner,.contact-inner{padding:3.5rem 1.25rem}
+  .hero{padding:3rem 1.25rem 2.5rem}
+}
+@media(max-width:560px){
+  .why-grid,.steps-grid,.footer-inner{grid-template-columns:1fr}
+  .hero-metrics{flex-wrap:wrap;gap:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Fire<span>YourPEO</span></a>
+  <div class="nav-links">
+    <a href="#why">Why Leave</a>
+    <a href="#process">Our Process</a>
+    <a href="#services">Services</a>
+    <a href="#results">Results</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="nav-cta">Get Free Analysis</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-eyebrow">Independent PEO Exit Advisory · Nationwide</div>
+    <h1>It's time to<br><em>fire your PEO.</em></h1>
+    <p class="hero-sub">Most companies with 50–100 employees are overpaying their PEO by $1,500–$2,500 per employee per year. We pull apart your invoices line by line and show you exactly what you'd save — free, with no obligation.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Get Your Free Analysis →</a>
+      <a href="#calculator" class="btn-secondary">Estimate My Savings</a>
+    </div>
+    <div class="hero-metrics">
+      <div>
+        <div class="metric-val">$322K</div>
+        <div class="metric-label">Average annual savings<br>across our clients</div>
+      </div>
+      <div>
+        <div class="metric-val">100%</div>
+        <div class="metric-label">Free analysis,<br>no obligation</div>
+      </div>
+      <div>
+        <div class="metric-val">Nationwide</div>
+        <div class="metric-label">All 50 states<br>covered</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALCULATOR -->
+  <div class="calc-card" id="calculator">
+    <div class="calc-label">Savings Estimator</div>
+    <div class="calc-title">What is your PEO costing you?</div>
+    <div class="calc-sub">4 fields. 60 seconds. No email required.</div>
+
+    <div class="field">
+      <label for="c-peo">Your Current PEO</label>
+      <div class="peo-input-wrap">
+        <input type="text" id="c-peo" placeholder="e.g. ADP TotalSource, TriNet…" autocomplete="off" oninput="peoInput(this)" onblur="setTimeout(()=>closeSuggestions(),150)">
+        <div class="peo-suggestions" id="peoSuggestions"></div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="c-emp">Full-Time Employees</label>
+      <input type="number" id="c-emp" placeholder="e.g. 65" min="1">
+    </div>
+
+    <div class="field">
+      <label for="c-st">State</label>
+      <div class="select-wrap">
+        <select id="c-st">
+          <option value="">Select your state</option>
+          <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option>
+          <option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option>
+          <option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+          <option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option>
+          <option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option>
+          <option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+          <option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option>
+          <option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option>
+          <option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
+          <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option>
+          <option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option>
+          <option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option>
+          <option>Wisconsin</option><option>Wyoming</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="c-ind">Industry</label>
+      <div class="select-wrap">
+        <select id="c-ind">
+          <option value="">Select your industry</option>
+          <option>Technology & Software</option>
+          <option>Professional Services</option>
+          <option>Healthcare & Medical</option>
+          <option>Financial Services</option>
+          <option>Manufacturing</option>
+          <option>Construction & Trades</option>
+          <option>Retail & E-commerce</option>
+          <option>Hospitality & Food Service</option>
+          <option>Logistics & Transportation</option>
+          <option>Real Estate</option>
+          <option>Marketing & Creative</option>
+          <option>Education</option>
+          <option>Non-profit</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="doCalc()">Calculate My Estimated Savings →</button>
+
+    <div class="result-box" id="resultBox">
+      <div class="result-lbl">Your Estimated Annual Savings</div>
+      <div class="result-num" id="resultNum">—</div>
+      <div class="result-note" id="resultNote"></div>
+      <button class="result-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get My Free Analysis — No Obligation →</button>
+    </div>
+
+    <div class="calc-disclaimer">We're paid by carriers, never by you. The analysis is always free.</div>
+  </div>
+</section>
+
+<!-- PEO BAR -->
+<div class="peo-bar">
+  <div class="peo-bar-label">We've helped companies fire</div>
+  <div class="peo-tags">
+    <span class="peo-tag">ADP TotalSource</span>
+    <span class="peo-tag">TriNet</span>
+    <span class="peo-tag">Insperity</span>
+    <span class="peo-tag">Paychex</span>
+    <span class="peo-tag">Justworks</span>
+    <span class="peo-tag">Rippling</span>
+    <span class="peo-tag">G&A Partners</span>
+    <span class="peo-tag">CoAdvantage</span>
+    <span class="peo-tag">ExtensisHR</span>
+    <span class="peo-tag">Oasis</span>
+    <span class="peo-tag">+ Many more</span>
+  </div>
+</div>
+
+<!-- WHY LEAVE -->
+<section class="section" id="why">
+  <div class="section-tag">Why Companies Leave</div>
+  <h2>You outgrew your PEO.<br><em>That's a good thing.</em></h2>
+  <p class="section-intro">PEOs make sense when you're small. But once you hit 50+ employees, the bundled model costs more than it saves. Here's what we hear most.</p>
+  <div class="why-grid">
+    <div class="why-card fade-up"><div class="why-icon">💰</div><h3>Costs Keep Climbing</h3><p>Admin fees, bundled markups, and opaque billing mean you're paying far more than standalone market rates — often without knowing it.</p></div>
+    <div class="why-card fade-up"><div class="why-icon">🔒</div><h3>Benefits Lock-In</h3><p>Your PEO picks your carriers and plan designs. You have zero ability to shop the market or tailor benefits to what your team actually needs.</p></div>
+    <div class="why-card fade-up"><div class="why-icon">📊</div><h3>No Cost Transparency</h3><p>Bundled invoices hide what you pay for medical, dental, workers' comp, and admin. You can't optimize what you can't see.</p></div>
+    <div class="why-card fade-up"><div class="why-icon">⚙️</div><h3>Rigid Technology</h3><p>Stuck with your PEO's HRIS whether it fits or not. Modern platforms like Paylocity, Gusto, or Paycor offer far better experiences at lower cost.</p></div>
+    <div class="why-card fade-up"><div class="why-icon">📈</div><h3>You've Scaled Past It</h3><p>Once you cross 50 employees, the PEO economics flip. You have enough scale to get competitive standalone rates on your own.</p></div>
+    <div class="why-card fade-up"><div class="why-icon">🏢</div><h3>Culture & Control</h3><p>Co-employment means another company's name on your paychecks and tax filings. Own your employer brand and your HR decisions.</p></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<div class="process-section" id="process">
+  <div class="process-inner">
+    <div class="section-tag">Our Process</div>
+    <h2>From PEO invoice to<br><em>market-ready in 4 steps.</em></h2>
+    <p class="section-intro">No guesswork. No generic estimates. Every number is backed by your actual invoices and your census data.</p>
+    <div class="steps-grid">
+      <div class="step-block fade-up"><div class="step-num">01</div><h3>Invoice Extraction</h3><p>We pull your PEO invoices apart line by line — admin fees, medical, dental, workers' comp, FICA — every cost component isolated and categorized.</p></div>
+      <div class="step-block fade-up"><div class="step-num">02</div><h3>Census Analysis</h3><p>Your employee census data gets mapped against PEO tier structures and enrollment records to build accurate per-employee cost profiles.</p></div>
+      <div class="step-block fade-up"><div class="step-num">03</div><h3>Market Comparison</h3><p>We run a full RFP across medical carriers, payroll providers, and HRIS platforms to assemble competitive standalone alternatives specific to your census.</p></div>
+      <div class="step-block fade-up"><div class="step-num">04</div><h3>Decision Workbook</h3><p>You receive a comprehensive workbook with rate cards, enrollment data, invoice history, and a clear side-by-side savings analysis — all in one place.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-tag">Full-Service Exit</div>
+  <h2>We don't just analyze.<br><em>We handle everything.</em></h2>
+  <p class="section-intro">When you fire a PEO, every piece of the bundle needs to be replaced. Medical, ancillary, workers' comp, payroll, HRIS — we go to market on all of it so you don't juggle multiple brokers.</p>
+  <div class="services-grid">
+    <div class="service-card fade-up"><h3>🏥 Medical Benefits</h3><p>We run a full RFP across all major medical carriers — UHC, Aetna, Cigna, BCBS, Kaiser — finding plans that match or beat your current coverage at significantly lower rates.</p><div class="stags"><span class="stag">Fully insured</span><span class="stag">Level-funded</span><span class="stag">Self-funded options</span></div></div>
+    <div class="service-card fade-up"><h3>🦷 Dental, Vision & Ancillary</h3><p>Every ancillary line gets its own market analysis. Dental, vision, life, disability, accident, and voluntary benefits — all shopped independently for best pricing and plan design.</p><div class="stags"><span class="stag">All major carriers</span><span class="stag">Custom plan design</span></div></div>
+    <div class="service-card fade-up"><h3>🦺 Workers' Compensation</h3><p>Your PEO bundles workers' comp into one opaque line item. We unbundle it, analyze your mod rate, and go to market to make sure your premiums are truly competitive.</p><div class="stags"><span class="stag">Mod rate analysis</span><span class="stag">Market-competitive premiums</span></div></div>
+    <div class="service-card fade-up"><h3>💻 HRIS & Payroll Technology</h3><p>We evaluate platforms like Paylocity, Gusto, ADP Workforce Now, Paycor, and Rippling — matching features and employee experience to exactly what your company needs.</p><div class="stags"><span class="stag">Full platform evaluation</span><span class="stag">Implementation support</span></div></div>
+    <div class="service-card fade-up"><h3>🛡️ EPLI & Compliance</h3><p>Employment Practices Liability Insurance is often buried in PEO contracts. We make sure you have standalone EPLI coverage in place so you're protected from day one.</p><div class="stags"><span class="stag">Standalone EPLI</span><span class="stag">Seamless transition</span></div></div>
+    <div class="service-card fade-up"><h3>🤝 Ongoing Advisory</h3><p>We don't disappear after the transition. We stay as your ongoing benefits advisor — renewals, open enrollment, employee questions, and compliance year after year.</p><div class="stags"><span class="stag">Renewals</span><span class="stag">Open enrollment</span><span class="stag">HR advisory</span></div></div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<div class="results-section" id="results">
+  <div class="results-inner">
+    <div class="section-tag">Real Results</div>
+    <h2>The numbers speak<br><em>for themselves.</em></h2>
+    <p class="section-intro">Every engagement starts with a no-cost analysis. Here's what recent clients discovered when we opened up their PEO invoices.</p>
+    <div class="results-grid">
+      <div class="result-card fade-up"><div class="rc-savings">$352,000</div><div class="rc-label">Annual savings identified for an 88-employee company. Fired TriNet.</div><div class="rc-co">BioTech Company</div><div class="rc-detail">New York · 88 employees</div></div>
+      <div class="result-card fade-up"><div class="rc-savings">$202,000</div><div class="rc-label">Annual savings identified for a 91-employee company. Fired Paychex.</div><div class="rc-co">Construction Company</div><div class="rc-detail">Florida · 91 employees</div></div>
+      <div class="result-card fade-up"><div class="rc-savings">$412,000</div><div class="rc-label">Annual savings identified for a 161-employee company. Fired ADP.</div><div class="rc-co">Rideshare Services</div><div class="rc-detail">New York · 161 employees</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="section-tag">What Clients Say</div>
+  <h2>Trusted by business leaders<br><em>across the country.</em></h2>
+  <div class="tgrid">
+    <div class="tcard fade-up"><div class="qmark">"</div><p class="ttext">We had no idea how much we were overpaying until we saw the full analysis side by side. The transition was completely smooth and our employees didn't miss a beat.</p><div class="tsavings">$352,000 / year saved</div><div class="tauthor">CEO — BioTech Company · 88 Employees · New York</div></div>
+    <div class="tcard fade-up"><div class="qmark">"</div><p class="ttext">The workbook was incredibly detailed. Every line item broken out, every carrier comparison mapped. It gave our board the confidence to make the call. Best decision we made all year.</p><div class="tsavings">$412,000 / year saved</div><div class="tauthor">CFO — Rideshare Services · 161 Employees · New York</div></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="section-tag">Common Questions</div>
+  <h2>Everything you need to know<br><em>about firing your PEO.</em></h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How much does the analysis cost?<span class="chevron">+</span></button>
+      <div class="faq-a">Nothing. Our initial analysis is 100% free with no obligation. We pull apart your invoices, map your census data, and show you exactly what you'd save. If you move forward, we earn compensation through standard broker commissions from carriers — never from you.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How long does it take?<span class="chevron">+</span></button>
+      <div class="faq-a">Typically 1–2 weeks from the time we receive your PEO invoices and census data. We deliver a comprehensive workbook with rate cards, enrollment data, invoice breakdowns, and side-by-side market comparisons.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What size companies do you work with?<span class="chevron">+</span></button>
+      <div class="faq-a">Our sweet spot is companies with 50–100 employees — large enough to get competitive standalone rates, but often still stuck in a PEO they've outgrown. We also work with companies ranging from 40 to 200+ employees.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What if the numbers say we should stay in our PEO?<span class="chevron">+</span></button>
+      <div class="faq-a">Then we'll tell you that. Our job is to show you the real numbers so you can make the best decision for your company — not to push you into a transition. If staying makes more sense, you'll know with certainty instead of guessing.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Will my employees' benefits be disrupted during the transition?<span class="chevron">+</span></button>
+      <div class="faq-a">Minimizing disruption is a top priority. We coordinate timing with your PEO termination date, ensure continuity of coverage, and manage the enrollment process so your employees experience a seamless transition with no gaps in benefits.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Which PEOs do you help companies leave?<span class="chevron">+</span></button>
+      <div class="faq-a">All of them. We have experience with ADP TotalSource, TriNet, Insperity, Paychex, Justworks, Rippling, G&A Partners, CoAdvantage, ExtensisHR, and many others. The process works the same regardless of which PEO you're currently with.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What do we transition to after leaving?<span class="chevron">+</span></button>
+      <div class="faq-a">A standalone setup built specifically for your company — your own group medical, dental, and vision plans through major carriers, a modern HRIS and payroll platform, standalone workers' comp, and whatever else you need. Everything selected through competitive RFP so you get best market rates.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="section-tag">Get Your Free Analysis</div>
+      <h2>Find out exactly what<br>your PEO is <em>costing you.</em></h2>
+      <p class="contact-sub">No obligation, no pressure — just real numbers that show what you're actually paying and what the open market can offer your company.</p>
+      <ul class="cbullets">
+        <li>Line-by-line invoice breakdown of your true PEO costs</li>
+        <li>Census-matched employee cost profiles by tier</li>
+        <li>Side-by-side market comparison with standalone alternatives</li>
+        <li>Comprehensive decision workbook delivered in 1–2 weeks</li>
+        <li>100% free — we're paid by carriers, never by you</li>
+      </ul>
+    </div>
+
+    <div class="form-card">
+      <div class="form-card-title">Request Your Free Analysis</div>
+      <div class="form-card-sub">Fill out the form and we'll be in touch within 24 hours.</div>
+
+      <form name="contact" netlify action="/thank-you.html" method="POST">
+        <input type="hidden" name="form-name" value="contact">
+        <div class="form-row">
+          <div class="field"><label>First Name</label><input type="text" name="first-name" placeholder="Jane" required></div>
+          <div class="field"><label>Last Name</label><input type="text" name="last-name" placeholder="Smith"></div>
+        </div>
+        <div class="field"><label>Work Email</label><input type="email" name="email" placeholder="jane@company.com" required></div>
+        <div class="field"><label>Company Name</label><input type="text" name="company" placeholder="Acme Corp"></div>
+        <div class="field">
+          <label>Number of Employees</label>
+          <div class="select-wrap"><select name="employees">
+            <option value="">Select range</option>
+            <option>40 – 49</option><option>50 – 99</option><option>100 – 199</option><option>200 – 499</option><option>500+</option>
+          </select></div>
+        </div>
+        <div class="field">
+          <label>Current PEO</label>
+          <div class="select-wrap"><select name="peo">
+            <option value="">Select PEO</option>
+            <option>ADP TotalSource</option><option>TriNet</option><option>Insperity</option>
+            <option>Paychex</option><option>Justworks</option><option>Rippling</option>
+            <option>G&A Partners</option><option>CoAdvantage</option><option>ExtensisHR</option>
+            <option>Oasis</option><option>Other</option><option>Not sure</option>
+          </select></div>
+        </div>
+        <div class="field">
+          <label>Anything else we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+          <textarea name="notes" placeholder="Contract renewal date, biggest pain points, timeline, etc."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Get My Free Analysis →</button>
+        <div class="form-or">or</div>
+        <a href="https://outlook.office.com/bookwithme/user/e4e7b38d11fe4bb981c9008028be2e24@bbrown.com?anonymous&ep=plink" target="_blank" class="form-cal">📅 Book a 15-Minute Call Instead</a>
+        <div class="form-disclaimer">Your information is kept confidential and never shared.</div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Fire<span>YourPEO</span></div>
+      <div class="footer-tagline">Independent PEO exit advisory helping companies transition from Professional Employer Organizations to standalone benefits, payroll, and HRIS solutions. Nationwide.</div>
+    </div>
+    <div>
+      <h4>Navigate</h4>
+      <a href="#why">Why Leave a PEO</a>
+      <a href="#process">Our Process</a>
+      <a href="#services">Services</a>
+      <a href="#results">Results</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div>
+      <h4>PEO Exits</h4>
+      <a href="#">Fire ADP TotalSource</a>
+      <a href="#">Fire TriNet</a>
+      <a href="#">Fire Insperity</a>
+      <a href="#">Fire Paychex</a>
+      <a href="#">Fire Justworks</a>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <a href="mailto:hello@fireyourpeo.com">hello@fireyourpeo.com</a>
+      <a href="tel:+15550000000">(555) 000-0000</a>
+      <a href="#contact">Schedule a Call</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 FireYourPEO.com. Independent advisory. Not affiliated with any PEO provider. Names of PEOs referenced for identification purposes only.</div>
+</footer>
+
+<script>
+// ── PEO AUTOCOMPLETE ──
+const PEO_LIST = [
+  'ADP TotalSource','TriNet','Insperity','Paychex','Justworks','Rippling',
+  'G&A Partners','CoAdvantage','ExtensisHR','Oasis','Engage PEO',
+  'Sequoia One','Questco','Amplify PEO','Vensure Employer Services',
+  'Nextep','Infiniti HR','Employer Flexible','Abel HR','SB One'
+];
+
+function peoInput(el){
+  const val=el.value.trim().toLowerCase();
+  const box=document.getElementById('peoSuggestions');
+  if(!val){box.classList.remove('open');return;}
+  const matches=PEO_LIST.filter(p=>p.toLowerCase().includes(val));
+  if(!matches.length){box.classList.remove('open');return;}
+  box.innerHTML=matches.map(p=>`<div class="peo-suggestion" onmousedown="selectPeo('${p}')">${p}</div>`).join('');
+  box.classList.add('open');
+}
+
+function selectPeo(name){
+  document.getElementById('c-peo').value=name;
+  closeSuggestions();
+}
+
+function closeSuggestions(){
+  document.getElementById('peoSuggestions').classList.remove('open');
+}
+
+// ── CALCULATOR ──
+function doCalc(){
+  const peo=document.getElementById('c-peo');
+  const emp=document.getElementById('c-emp');
+  const st=document.getElementById('c-st');
+  const ind=document.getElementById('c-ind');
+  let ok=true;
+  [peo,emp,st,ind].forEach(el=>el.classList.remove('err'));
+  if(!peo.value.trim()){peo.classList.add('err');ok=false;}
+  if(!emp.value||parseInt(emp.value)<1||isNaN(parseInt(emp.value))){emp.classList.add('err');ok=false;}
+  if(!st.value){st.classList.add('err');ok=false;}
+  if(!ind.value){ind.classList.add('err');ok=false;}
+  if(!ok)return;
+
+  const n=parseInt(emp.value);
+  const fmt=v=>v.toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
+  document.getElementById('resultNum').textContent=fmt(n*1500)+' – '+fmt(n*2500);
+  document.getElementById('resultNote').textContent=
+    'Based on '+n+' employees with '+peo.value.trim()+' in '+st.value+' ('+ind.value+'). Actual savings depend on your current billing structure and open market rates for your specific census.';
+
+  const box=document.getElementById('resultBox');
+  box.classList.remove('show');
+  void box.offsetWidth;
+  box.classList.add('show');
+  setTimeout(()=>box.scrollIntoView({behavior:'smooth',block:'nearest'}),50);
+}
+
+// ── FORM ──
+function submitForm(){
+  const first=document.getElementById('f-first').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  if(!first||!email){alert('Please enter your name and work email to continue.');return;}
+  console.log('Lead:',{
+    first,last:document.getElementById('f-last').value.trim(),
+    email,company:document.getElementById('f-company').value.trim(),
+    employees:document.getElementById('f-emp').value,
+    peo:document.getElementById('f-peo').value,
+    notes:document.getElementById('f-notes').value.trim()
+  });
+  document.getElementById('formFields').style.display='none';
+  document.getElementById('formSuccess').style.display='block';
+}
+
+// ── FAQ ──
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el=>{
+    el.classList.remove('open');
+    el.querySelector('.chevron').textContent='+';
+  });
+  if(!wasOpen){item.classList.add('open');}
+}
+
+// ── SCROLL ANIMS ──
+const io=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('in'),i*80);
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
+
+// ── KEYBOARD ──
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter'&&document.activeElement.closest('#calculator'))doCalc();
+  if(e.key==='Escape')closeSuggestions();
+});
+</script>
+</body>
+</html>
