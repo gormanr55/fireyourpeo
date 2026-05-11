@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18151928449"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-18151928449');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fire Your PEO | Free Cost Analysis & Exit Plan</title>
@@ -25,7 +16,7 @@
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased}
-
+ 
 /* ── NAV ── */
 nav{display:flex;justify-content:space-between;align-items:center;padding:0 2.5rem;height:62px;border-bottom:1px solid var(--border);background:var(--white);position:sticky;top:0;z-index:200}
 .nav-logo{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:900;color:var(--ink);text-decoration:none;letter-spacing:-0.01em}
@@ -35,7 +26,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:0 2.5r
 .nav-links a:hover{color:var(--ink)}
 .nav-cta{display:inline-block;padding:0.5rem 1.15rem;background:var(--fire);color:#fff!important;border-radius:4px;font-size:0.8rem!important;font-weight:600!important;transition:background 0.15s!important;letter-spacing:0.01em}
 .nav-cta:hover{background:#c0421a!important}
-
+ 
 /* ── HERO ── */
 .hero{max-width:1120px;margin:0 auto;padding:5rem 2rem 4rem;display:grid;grid-template-columns:1fr 430px;gap:5rem;align-items:start}
 .hero-eyebrow{display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--fire);background:#fdf0eb;padding:0.3rem 0.8rem;border-radius:2px;margin-bottom:1.25rem}
@@ -50,14 +41,14 @@ h1 em{font-style:italic;color:var(--fire)}
 .hero-metrics{display:flex;gap:2.5rem;padding-top:2rem;border-top:1px solid var(--border)}
 .metric-val{font-family:'Fraunces',serif;font-size:1.75rem;font-weight:700;color:var(--ink);line-height:1;margin-bottom:0.2rem}
 .metric-label{font-size:0.75rem;color:var(--muted);line-height:1.4}
-
+ 
 /* ── CALC CARD ── */
 .calc-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:2.1rem;box-shadow:0 4px 28px rgba(0,0,0,0.08);position:sticky;top:80px}
 .calc-card::before{content:'';display:block;height:3px;background:var(--fire);border-radius:8px 8px 0 0;margin:-2.1rem -2.1rem 1.75rem;border-radius:7px 7px 0 0}
 .calc-label{font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.6rem}
 .calc-title{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;margin-bottom:0.3rem;color:var(--ink)}
 .calc-sub{font-size:0.82rem;color:var(--muted);margin-bottom:1.5rem}
-
+ 
 .field{margin-bottom:1rem}
 .field label{display:block;font-size:0.74rem;font-weight:600;color:var(--mid);margin-bottom:0.35rem;letter-spacing:0.02em}
 .field input,.field select{width:100%;padding:0.72rem 0.9rem;border:1.5px solid var(--border);border-radius:4px;font-family:'Inter',sans-serif;font-size:0.9rem;color:var(--ink);background:var(--white);transition:border-color 0.15s,box-shadow 0.15s;appearance:none;-webkit-appearance:none}
@@ -65,17 +56,17 @@ h1 em{font-style:italic;color:var(--fire)}
 .field input.err,.field select.err{border-color:var(--red);box-shadow:0 0 0 3px rgba(192,57,43,0.08)}
 .select-wrap{position:relative}
 .select-wrap::after{content:'↓';position:absolute;right:0.9rem;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none;font-size:0.8rem}
-
+ 
 /* peo autocomplete */
 .peo-input-wrap{position:relative}
 .peo-suggestions{position:absolute;top:100%;left:0;right:0;background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 4px 4px;z-index:50;max-height:180px;overflow-y:auto;display:none}
 .peo-suggestions.open{display:block}
 .peo-suggestion{padding:0.6rem 0.9rem;font-size:0.88rem;cursor:pointer;color:var(--ink);transition:background 0.1s}
 .peo-suggestion:hover{background:var(--highlight)}
-
+ 
 .calc-btn{width:100%;padding:0.875rem;background:var(--fire);color:#fff;border:none;border-radius:4px;font-family:'Inter',sans-serif;font-size:0.88rem;font-weight:600;cursor:pointer;margin-top:0.25rem;transition:background 0.15s,transform 0.1s;letter-spacing:0.01em}
 .calc-btn:hover{background:#c0421a;transform:translateY(-1px)}
-
+ 
 .result-box{display:none;margin-top:1.25rem;padding:1.25rem;background:var(--highlight);border:1px solid #b8dfc8;border-radius:6px}
 .result-box.show{display:block;animation:fadeUp 0.4s ease}
 @keyframes fadeUp{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
@@ -85,20 +76,20 @@ h1 em{font-style:italic;color:var(--fire)}
 .result-cta{display:block;width:100%;padding:0.8rem;background:var(--fire);color:#fff;border:none;border-radius:4px;font-family:'Inter',sans-serif;font-size:0.83rem;font-weight:600;cursor:pointer;text-align:center;text-decoration:none;transition:background 0.15s}
 .result-cta:hover{background:#c0421a}
 .calc-disclaimer{font-size:0.68rem;color:var(--muted);text-align:center;margin-top:0.85rem;line-height:1.5}
-
+ 
 /* ── PEO BAR ── */
 .peo-bar{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.5rem 2rem;text-align:center}
 .peo-bar-label{font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
 .peo-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem}
 .peo-tag{display:inline-block;padding:0.35rem 0.9rem;background:var(--bg);border:1px solid var(--border);border-radius:999px;font-size:0.78rem;font-weight:500;color:var(--mid)}
-
+ 
 /* ── SECTIONS ── */
 .section{max-width:1120px;margin:0 auto;padding:5.5rem 2rem}
 .section-tag{display:inline-block;font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--fire);margin-bottom:0.75rem}
 h2{font-family:'Fraunces',serif;font-size:clamp(2rem,3vw,2.7rem);font-weight:900;line-height:1.1;letter-spacing:-0.02em;margin-bottom:1rem}
 h2 em{font-style:italic;color:var(--fire)}
 .section-intro{font-size:1rem;color:var(--mid);max-width:600px;line-height:1.8;margin-bottom:3rem}
-
+ 
 /* WHY */
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .why-card{padding:1.75rem;border:1px solid var(--border);border-radius:6px;background:var(--white);transition:border-color 0.2s,box-shadow 0.2s}
@@ -106,7 +97,7 @@ h2 em{font-style:italic;color:var(--fire)}
 .why-icon{font-size:1.5rem;margin-bottom:0.75rem}
 .why-card h3{font-size:1rem;font-weight:600;margin-bottom:0.5rem}
 .why-card p{font-size:0.85rem;color:var(--mid);line-height:1.75}
-
+ 
 /* PROCESS */
 .process-section{background:var(--ink)}
 .process-inner{max-width:1120px;margin:0 auto;padding:5.5rem 2rem}
@@ -118,7 +109,7 @@ h2 em{font-style:italic;color:var(--fire)}
 .step-num{font-family:'Fraunces',serif;font-size:2.75rem;font-weight:900;color:rgba(244,146,106,0.2);line-height:1;margin-bottom:1rem}
 .step-block h3{font-size:0.95rem;font-weight:600;color:#fff;margin-bottom:0.5rem}
 .step-block p{font-size:0.82rem;color:rgba(255,255,255,0.5);line-height:1.75}
-
+ 
 /* SERVICES */
 .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
 .service-card{padding:2rem;border:1px solid var(--border);border-radius:6px;background:var(--white);transition:border-color 0.2s}
@@ -127,7 +118,7 @@ h2 em{font-style:italic;color:var(--fire)}
 .service-card p{font-size:0.85rem;color:var(--mid);line-height:1.75;margin-bottom:0.75rem}
 .stags{display:flex;flex-wrap:wrap;gap:0.4rem}
 .stag{font-size:0.7rem;padding:0.2rem 0.65rem;background:var(--highlight);color:var(--accent);border-radius:999px;font-weight:500}
-
+ 
 /* RESULTS */
 .results-section{background:var(--highlight);border-top:1px solid #c3dfd0;border-bottom:1px solid #c3dfd0}
 .results-inner{max-width:1120px;margin:0 auto;padding:5.5rem 2rem}
@@ -137,7 +128,7 @@ h2 em{font-style:italic;color:var(--fire)}
 .rc-label{font-size:0.78rem;color:var(--mid);margin-bottom:1.25rem;line-height:1.55}
 .rc-co{font-size:0.82rem;font-weight:600;color:var(--ink)}
 .rc-detail{font-size:0.75rem;color:var(--muted)}
-
+ 
 /* TESTIMONIALS */
 .tgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem}
 .tcard{padding:2rem;border:1px solid var(--border);border-radius:6px;background:var(--white)}
@@ -145,7 +136,7 @@ h2 em{font-style:italic;color:var(--fire)}
 .ttext{font-size:0.92rem;color:var(--mid);line-height:1.85;margin-bottom:1.5rem;font-style:italic}
 .tsavings{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;color:var(--accent);margin-bottom:0.2rem}
 .tauthor{font-size:0.75rem;color:var(--muted);font-weight:500}
-
+ 
 /* FAQ */
 .faq-list{margin-top:2.5rem;border-top:1px solid var(--border)}
 .faq-item{border-bottom:1px solid var(--border)}
@@ -154,7 +145,7 @@ h2 em{font-style:italic;color:var(--fire)}
 .faq-item.open .chevron{transform:rotate(45deg);background:var(--fire);border-color:var(--fire);color:#fff}
 .faq-a{display:none;padding-bottom:1.3rem;font-size:0.88rem;color:var(--mid);line-height:1.85;max-width:720px}
 .faq-item.open .faq-a{display:block}
-
+ 
 /* CONTACT */
 .contact-section{background:var(--ink)}
 .contact-inner{max-width:1120px;margin:0 auto;padding:5.5rem 2rem;display:grid;grid-template-columns:1fr 500px;gap:5rem;align-items:start}
@@ -164,7 +155,7 @@ h2 em{font-style:italic;color:var(--fire)}
 .cbullets{list-style:none;margin-top:1.75rem}
 .cbullets li{display:flex;align-items:flex-start;gap:0.75rem;font-size:0.88rem;color:rgba(255,255,255,0.6);margin-bottom:0.8rem;line-height:1.65}
 .cbullets li::before{content:'✓';color:#7acaa0;font-weight:700;flex-shrink:0;margin-top:0.1rem}
-
+ 
 .form-card{background:var(--white);border-radius:8px;padding:2.1rem}
 .form-card-title{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:0.25rem}
 .form-card-sub{font-size:0.8rem;color:var(--muted);margin-bottom:1.5rem}
@@ -183,7 +174,7 @@ h2 em{font-style:italic;color:var(--fire)}
 .form-success .check{font-size:2.5rem;margin-bottom:1rem}
 .form-success h3{font-family:'Fraunces',serif;font-size:1.35rem;color:var(--accent);margin-bottom:0.5rem}
 .form-success p{font-size:0.85rem;color:var(--muted);line-height:1.75}
-
+ 
 /* FOOTER */
 footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.07)}
 .footer-inner{max-width:1120px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem}
@@ -194,11 +185,11 @@ footer h4{font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:
 footer a{display:block;font-size:0.82rem;color:rgba(255,255,255,0.4);text-decoration:none;margin-bottom:0.5rem;transition:color 0.15s}
 footer a:hover{color:rgba(255,255,255,0.9)}
 .footer-bottom{max-width:1120px;margin:0 auto;padding:1rem 2rem 2rem;font-size:0.74rem;color:rgba(255,255,255,0.2)}
-
+ 
 /* ANIM */
 .fade-up{opacity:0;transform:translateY(18px);transition:opacity 0.55s ease,transform 0.55s ease}
 .fade-up.in{opacity:1;transform:translateY(0)}
-
+ 
 /* RESPONSIVE */
 @media(max-width:980px){
   .hero,.contact-inner{grid-template-columns:1fr;gap:2.5rem}
@@ -219,7 +210,7 @@ footer a:hover{color:rgba(255,255,255,0.9)}
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">Fire<span>YourPEO</span></a>
@@ -232,7 +223,7 @@ footer a:hover{color:rgba(255,255,255,0.9)}
     <a href="#contact" class="nav-cta">Get Free Analysis</a>
   </div>
 </nav>
-
+ 
 <!-- HERO -->
 <section class="hero">
   <div>
@@ -245,8 +236,8 @@ footer a:hover{color:rgba(255,255,255,0.9)}
     </div>
     <div class="hero-metrics">
       <div>
-        <div class="metric-val">$1,500–$2,500</div>
-        <div class="metric-label">Estimated savings per<br>employee / year</div>
+        <div class="metric-val">$322K</div>
+        <div class="metric-label">Average annual savings<br>across our clients</div>
       </div>
       <div>
         <div class="metric-val">100%</div>
@@ -258,13 +249,13 @@ footer a:hover{color:rgba(255,255,255,0.9)}
       </div>
     </div>
   </div>
-
+ 
   <!-- CALCULATOR -->
   <div class="calc-card" id="calculator">
     <div class="calc-label">Savings Estimator</div>
     <div class="calc-title">What is your PEO costing you?</div>
     <div class="calc-sub">4 fields. 60 seconds. No email required.</div>
-
+ 
     <div class="field">
       <label for="c-peo">Your Current PEO</label>
       <div class="peo-input-wrap">
@@ -272,12 +263,12 @@ footer a:hover{color:rgba(255,255,255,0.9)}
         <div class="peo-suggestions" id="peoSuggestions"></div>
       </div>
     </div>
-
+ 
     <div class="field">
       <label for="c-emp">Full-Time Employees</label>
       <input type="number" id="c-emp" placeholder="e.g. 65" min="1">
     </div>
-
+ 
     <div class="field">
       <label for="c-st">State</label>
       <div class="select-wrap">
@@ -299,7 +290,7 @@ footer a:hover{color:rgba(255,255,255,0.9)}
         </select>
       </div>
     </div>
-
+ 
     <div class="field">
       <label for="c-ind">Industry</label>
       <div class="select-wrap">
@@ -322,20 +313,20 @@ footer a:hover{color:rgba(255,255,255,0.9)}
         </select>
       </div>
     </div>
-
+ 
     <button class="calc-btn" onclick="doCalc()">Calculate My Estimated Savings →</button>
-
+ 
     <div class="result-box" id="resultBox">
       <div class="result-lbl">Your Estimated Annual Savings</div>
       <div class="result-num" id="resultNum">—</div>
       <div class="result-note" id="resultNote"></div>
       <button class="result-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get My Free Analysis — No Obligation →</button>
     </div>
-
+ 
     <div class="calc-disclaimer">We're paid by carriers, never by you. The analysis is always free.</div>
   </div>
 </section>
-
+ 
 <!-- PEO BAR -->
 <div class="peo-bar">
   <div class="peo-bar-label">We've helped companies fire</div>
@@ -353,7 +344,7 @@ footer a:hover{color:rgba(255,255,255,0.9)}
     <span class="peo-tag">+ Many more</span>
   </div>
 </div>
-
+ 
 <!-- WHY LEAVE -->
 <section class="section" id="why">
   <div class="section-tag">Why Companies Leave</div>
@@ -368,7 +359,7 @@ footer a:hover{color:rgba(255,255,255,0.9)}
     <div class="why-card fade-up"><div class="why-icon">🏢</div><h3>Culture & Control</h3><p>Co-employment means another company's name on your paychecks and tax filings. Own your employer brand and your HR decisions.</p></div>
   </div>
 </section>
-
+ 
 <!-- PROCESS -->
 <div class="process-section" id="process">
   <div class="process-inner">
@@ -383,7 +374,7 @@ footer a:hover{color:rgba(255,255,255,0.9)}
     </div>
   </div>
 </div>
-
+ 
 <!-- SERVICES -->
 <section class="section" id="services">
   <div class="section-tag">Full-Service Exit</div>
@@ -398,7 +389,7 @@ footer a:hover{color:rgba(255,255,255,0.9)}
     <div class="service-card fade-up"><h3>🤝 Ongoing Advisory</h3><p>We don't disappear after the transition. We stay as your ongoing benefits advisor — renewals, open enrollment, employee questions, and compliance year after year.</p><div class="stags"><span class="stag">Renewals</span><span class="stag">Open enrollment</span><span class="stag">HR advisory</span></div></div>
   </div>
 </section>
-
+ 
 <!-- RESULTS -->
 <div class="results-section" id="results">
   <div class="results-inner">
@@ -406,23 +397,23 @@ footer a:hover{color:rgba(255,255,255,0.9)}
     <h2>The numbers speak<br><em>for themselves.</em></h2>
     <p class="section-intro">Every engagement starts with a no-cost analysis. Here's what recent clients discovered when we opened up their PEO invoices.</p>
     <div class="results-grid">
-      <div class="result-card fade-up"><div class="rc-savings">$352,000</div><div class="rc-label">Annual savings identified for 88-employee company. Fired TriNet.</div><div class="rc-co">BioTech Compay</div><div class="rc-detail">New York · 88 employees</div></div>
-      <div class="result-card fade-up"><div class="rc-savings">$202,000</div><div class="rc-label">Annual savings identified for an 91-employee company. Fired Paychex.</div><div class="rc-co">Construction Company</div><div class="rc-detail">Florida · 91 employees</div></div>
+      <div class="result-card fade-up"><div class="rc-savings">$352,000</div><div class="rc-label">Annual savings identified for an 88-employee company. Fired TriNet.</div><div class="rc-co">BioTech Company</div><div class="rc-detail">New York · 88 employees</div></div>
+      <div class="result-card fade-up"><div class="rc-savings">$202,000</div><div class="rc-label">Annual savings identified for a 91-employee company. Fired Paychex.</div><div class="rc-co">Construction Company</div><div class="rc-detail">Florida · 91 employees</div></div>
       <div class="result-card fade-up"><div class="rc-savings">$412,000</div><div class="rc-label">Annual savings identified for a 161-employee company. Fired ADP.</div><div class="rc-co">Rideshare Services</div><div class="rc-detail">New York · 161 employees</div></div>
     </div>
   </div>
 </div>
-
+ 
 <!-- TESTIMONIALS -->
 <section class="section">
   <div class="section-tag">What Clients Say</div>
   <h2>Trusted by business leaders<br><em>across the country.</em></h2>
   <div class="tgrid">
-    <div class="tcard fade-up"><div class="qmark">"</div><p class="ttext">We had no idea how much we were overpaying until we saw the full analysis side by side. The transition was completely smooth and our employees didn't miss a beat.</p><div class="tsavings">$202,000 / year saved</div><div class="tauthor">Owner — Construction Company · 91 Employees · Florida</div></div>
-    <div class="tcard fade-up"><div class="qmark">"</div><p class="ttext">The workbook was incredibly detailed. Every line item broken out, every carrier comparison mapped. It gave our executive team the confidence to make the call. Best decision we made all year.</p><div class="tsavings">$165,000 / year saved</div><div class="tauthor">CFO — Social Media Company · 51 Employees · Florida</div></div>
+    <div class="tcard fade-up"><div class="qmark">"</div><p class="ttext">We had no idea how much we were overpaying until we saw the full analysis side by side. The transition was completely smooth and our employees didn't miss a beat.</p><div class="tsavings">$352,000 / year saved</div><div class="tauthor">CEO — BioTech Company · 88 Employees · New York</div></div>
+    <div class="tcard fade-up"><div class="qmark">"</div><p class="ttext">The workbook was incredibly detailed. Every line item broken out, every carrier comparison mapped. It gave our board the confidence to make the call. Best decision we made all year.</p><div class="tsavings">$412,000 / year saved</div><div class="tauthor">CFO — Rideshare Services · 161 Employees · New York</div></div>
   </div>
 </section>
-
+ 
 <!-- FAQ -->
 <section class="section" id="faq">
   <div class="section-tag">Common Questions</div>
@@ -458,7 +449,7 @@ footer a:hover{color:rgba(255,255,255,0.9)}
     </div>
   </div>
 </section>
-
+ 
 <!-- CONTACT -->
 <div class="contact-section" id="contact">
   <div class="contact-inner">
@@ -474,29 +465,29 @@ footer a:hover{color:rgba(255,255,255,0.9)}
         <li>100% free — we're paid by carriers, never by you</li>
       </ul>
     </div>
-
+ 
     <div class="form-card">
       <div class="form-card-title">Request Your Free Analysis</div>
       <div class="form-card-sub">Fill out the form and we'll be in touch within 24 hours.</div>
-
-      <form id="formFields" name="contact" netlify>
-<input type="hidden" name="form-name" value="contact">
+ 
+      <form name="contact" netlify action="/thank-you.html" method="POST">
+        <input type="hidden" name="form-name" value="contact">
         <div class="form-row">
-          <div class="field"><label for="f-first">First Name</label><input type="text" id="f-first" placeholder="Jane"></div>
-          <div class="field"><label for="f-last">Last Name</label><input type="text" id="f-last" placeholder="Smith"></div>
+          <div class="field"><label>First Name</label><input type="text" name="first-name" placeholder="Jane" required></div>
+          <div class="field"><label>Last Name</label><input type="text" name="last-name" placeholder="Smith"></div>
         </div>
-        <div class="field"><label for="f-email">Work Email</label><input type="email" id="f-email" placeholder="jane@company.com"></div>
-        <div class="field"><label for="f-company">Company Name</label><input type="text" id="f-company" placeholder="Acme Corp"></div>
+        <div class="field"><label>Work Email</label><input type="email" name="email" placeholder="jane@company.com" required></div>
+        <div class="field"><label>Company Name</label><input type="text" name="company" placeholder="Acme Corp"></div>
         <div class="field">
-          <label for="f-emp">Number of Employees</label>
-          <div class="select-wrap"><select id="f-emp">
+          <label>Number of Employees</label>
+          <div class="select-wrap"><select name="employees">
             <option value="">Select range</option>
             <option>40 – 49</option><option>50 – 99</option><option>100 – 199</option><option>200 – 499</option><option>500+</option>
           </select></div>
         </div>
         <div class="field">
-          <label for="f-peo">Current PEO</label>
-          <div class="select-wrap"><select id="f-peo">
+          <label>Current PEO</label>
+          <div class="select-wrap"><select name="peo">
             <option value="">Select PEO</option>
             <option>ADP TotalSource</option><option>TriNet</option><option>Insperity</option>
             <option>Paychex</option><option>Justworks</option><option>Rippling</option>
@@ -505,24 +496,18 @@ footer a:hover{color:rgba(255,255,255,0.9)}
           </select></div>
         </div>
         <div class="field">
-          <label for="f-notes">Anything else we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
-          <textarea id="f-notes" placeholder="Contract renewal date, biggest pain points, timeline, etc."></textarea>
+          <label>Anything else we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+          <textarea name="notes" placeholder="Contract renewal date, biggest pain points, timeline, etc."></textarea>
         </div>
-        <button class="form-submit" onclick="submitForm()">Get My Free Analysis →</button>
+        <button type="submit" class="form-submit">Get My Free Analysis →</button>
         <div class="form-or">or</div>
-        <a href="https://outlook.office.com/bookwithme/user/e4e7b38d11fe4bb981c9008028be2e24@bbrown.com?anonymous&ep=plink" class="form-cal" target="_blank">📅 Book a 15-Minute Call Instead</a>
+        <a href="https://outlook.office.com/bookwithme/user/e4e7b38d11fe4bb981c9008028be2e24@bbrown.com?anonymous&ep=plink" target="_blank" class="form-cal">📅 Book a 15-Minute Call Instead</a>
         <div class="form-disclaimer">Your information is kept confidential and never shared.</div>
       </form>
-
-      <div class="form-success" id="formSuccess">
-        <div class="check">✅</div>
-        <h3>Thanks. We got your request.</h3>
-        <p>We'll review your information and reach out within one business day to kick off your PEO exit analysis.</p>
-      </div>
     </div>
   </div>
 </div>
-
+ 
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -555,7 +540,7 @@ footer a:hover{color:rgba(255,255,255,0.9)}
   </div>
   <div class="footer-bottom">© 2025 FireYourPEO.com. Independent advisory. Not affiliated with any PEO provider. Names of PEOs referenced for identification purposes only.</div>
 </footer>
-
+ 
 <script>
 // ── PEO AUTOCOMPLETE ──
 const PEO_LIST = [
@@ -564,7 +549,7 @@ const PEO_LIST = [
   'Sequoia One','Questco','Amplify PEO','Vensure Employer Services',
   'Nextep','Infiniti HR','Employer Flexible','Abel HR','SB One'
 ];
-
+ 
 function peoInput(el){
   const val=el.value.trim().toLowerCase();
   const box=document.getElementById('peoSuggestions');
@@ -574,16 +559,16 @@ function peoInput(el){
   box.innerHTML=matches.map(p=>`<div class="peo-suggestion" onmousedown="selectPeo('${p}')">${p}</div>`).join('');
   box.classList.add('open');
 }
-
+ 
 function selectPeo(name){
   document.getElementById('c-peo').value=name;
   closeSuggestions();
 }
-
+ 
 function closeSuggestions(){
   document.getElementById('peoSuggestions').classList.remove('open');
 }
-
+ 
 // ── CALCULATOR ──
 function doCalc(){
   const peo=document.getElementById('c-peo');
@@ -597,41 +582,36 @@ function doCalc(){
   if(!st.value){st.classList.add('err');ok=false;}
   if(!ind.value){ind.classList.add('err');ok=false;}
   if(!ok)return;
-
+ 
   const n=parseInt(emp.value);
   const fmt=v=>v.toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
   document.getElementById('resultNum').textContent=fmt(n*1500)+' – '+fmt(n*2500);
   document.getElementById('resultNote').textContent=
     'Based on '+n+' employees with '+peo.value.trim()+' in '+st.value+' ('+ind.value+'). Actual savings depend on your current billing structure and open market rates for your specific census.';
-
+ 
   const box=document.getElementById('resultBox');
   box.classList.remove('show');
   void box.offsetWidth;
   box.classList.add('show');
   setTimeout(()=>box.scrollIntoView({behavior:'smooth',block:'nearest'}),50);
 }
-
+ 
 // ── FORM ──
-async function submitForm(){
+function submitForm(){
   const first=document.getElementById('f-first').value.trim();
   const email=document.getElementById('f-email').value.trim();
   if(!first||!email){alert('Please enter your name and work email to continue.');return;}
-  const btn=document.querySelector('.form-submit');
-  btn.textContent='Submitting...';
-  btn.disabled=true;
-  const data=new FormData();
-  data.append('form-name','contact');
-  data.append('first-name',first);
-  data.append('last-name',document.getElementById('f-last').value.trim());
-  data.append('email',email);
-  data.append('company',document.getElementById('f-company').value.trim());
-  data.append('employees',document.getElementById('f-emp').value);
-  data.append('peo',document.getElementById('f-peo').value);
-  data.append('notes',document.getElementById('f-notes').value.trim());
-  try{await fetch('/',{method:'POST',body:data});}catch(e){}
-  window.location.href='/thank-you.html';
+  console.log('Lead:',{
+    first,last:document.getElementById('f-last').value.trim(),
+    email,company:document.getElementById('f-company').value.trim(),
+    employees:document.getElementById('f-emp').value,
+    peo:document.getElementById('f-peo').value,
+    notes:document.getElementById('f-notes').value.trim()
+  });
+  document.getElementById('formFields').style.display='none';
+  document.getElementById('formSuccess').style.display='block';
 }
-  
+ 
 // ── FAQ ──
 function toggleFaq(btn){
   const item=btn.closest('.faq-item');
@@ -642,7 +622,7 @@ function toggleFaq(btn){
   });
   if(!wasOpen){item.classList.add('open');}
 }
-
+ 
 // ── SCROLL ANIMS ──
 const io=new IntersectionObserver(entries=>{
   entries.forEach((e,i)=>{
@@ -653,7 +633,7 @@ const io=new IntersectionObserver(entries=>{
   });
 },{threshold:0.1});
 document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
-
+ 
 // ── KEYBOARD ──
 document.addEventListener('keydown',e=>{
   if(e.key==='Enter'&&document.activeElement.closest('#calculator'))doCalc();
