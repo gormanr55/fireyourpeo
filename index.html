@@ -611,20 +611,26 @@ function doCalc(){
 }
 
 // ── FORM ──
-function submitForm(){
+async function submitForm(){
   const first=document.getElementById('f-first').value.trim();
   const email=document.getElementById('f-email').value.trim();
   if(!first||!email){alert('Please enter your name and work email to continue.');return;}
-  console.log('Lead:',{
-    first,last:document.getElementById('f-last').value.trim(),
-    email,company:document.getElementById('f-company').value.trim(),
-    employees:document.getElementById('f-emp').value,
-    peo:document.getElementById('f-peo').value,
-    notes:document.getElementById('f-notes').value.trim()
-  });
-  window.location.href = '/thank-you.html';
+  const btn=document.querySelector('.form-submit');
+  btn.textContent='Submitting...';
+  btn.disabled=true;
+  const data=new FormData();
+  data.append('form-name','contact');
+  data.append('first-name',first);
+  data.append('last-name',document.getElementById('f-last').value.trim());
+  data.append('email',email);
+  data.append('company',document.getElementById('f-company').value.trim());
+  data.append('employees',document.getElementById('f-emp').value);
+  data.append('peo',document.getElementById('f-peo').value);
+  data.append('notes',document.getElementById('f-notes').value.trim());
+  try{await fetch('/',{method:'POST',body:data});}catch(e){}
+  window.location.href='/thank-you.html';
 }
-
+  
 // ── FAQ ──
 function toggleFaq(btn){
   const item=btn.closest('.faq-item');
